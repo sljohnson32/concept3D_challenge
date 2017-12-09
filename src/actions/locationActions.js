@@ -28,7 +28,7 @@ const fetchAllLocations = () => {
   };
 };
 
-const addNewLocation = (location) => {
+const saveLocation = (location) => {
   return (dispatch) => {
     return fetch('/locations', {
       method: 'POST',
@@ -39,9 +39,9 @@ const addNewLocation = (location) => {
       body: location
     })
       .then(location => location.json())
-      .then(json => dispatch(storeNewLocation(json)));
+      .then(json => dispatch(storeNewLocation(json)))
   };
 };
 
 
-export { fetchAllLocations }
+export { fetchAllLocations, saveLocation }
