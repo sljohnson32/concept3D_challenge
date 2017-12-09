@@ -11,8 +11,9 @@ const Locations = (state = initialState, action) => {
       });
 
     case 'STORE_NEW_LOCATION':
-      const newLocations = state.data.push(action.data)
-      return Object.assign({}, state, newLocations);
+      console.log(action.location)
+      const newLocations = state.data.push(action.location)
+      return Object.assign({}, state, ...newLocations);
 
     default:
       return state;
