@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-
+const isCoordinates = require('is-coordinates')
 
 class Form extends Component {
 
   submitForm(e, data) {
     e.preventDefault();
-    this.props.saveLocation(data);
+    if (isCoordinates([data.lat * 1, data.lng * 1], { validate: true })) {
+      this.props.saveLocation(data);
+    } else alert(`${data.lat} and ${data.lng} are not valid coordinates. Please try again`)
   }
 
   render() {
