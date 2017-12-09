@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, ZoomControl } from 'react-leaflet';
-import AllMarkers from './AllMarkers'
+import AllMarkers from '../containers/AllMarkers'
 
 class LeafletMap extends Component {
   constructor(props) {
@@ -9,6 +9,12 @@ class LeafletMap extends Component {
 
     };
   }
+
+  handleClick(e) {
+    console.log(e.latlng)
+    
+  }
+
   render() {
     return (
       <div className="map-container">
@@ -18,6 +24,7 @@ class LeafletMap extends Component {
           center={[39.750809, -104.996810]}
           zoom={4}
           maxBounds={[[85, 100], [-85, -280]]}
+          onClick={this.handleClick}
         >
           <TileLayer
             url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
