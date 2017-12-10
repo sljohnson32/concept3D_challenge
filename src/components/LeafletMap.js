@@ -15,12 +15,15 @@ class LeafletMap extends Component {
   }
 
   render() {
+
+    let { currentCoords } = this.props;
+
     return (
       <div className="map-container">
         <Map
           className="map"
           zoomControl={false}
-          center={this.state.center}
+          center={ currentCoords ? currentCoords : this.state.center }
           zoom={4}
           maxBounds={[[85, 100], [-85, -280]]}
           onClick={this.handleClick}
