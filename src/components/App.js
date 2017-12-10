@@ -3,6 +3,7 @@ import LeafletMap from './LeafletMap';
 import FormContainer from '../containers/FormContainer';
 
 class App extends Component {
+
   componentDidMount() {
     this.getLocations();
   }
@@ -13,7 +14,7 @@ class App extends Component {
 
   render() {
 
-    let { currentCoords, polygonCoords } = this.props
+    let { currentCoords, polygonCoords } = this.props;
 
     return (
       <div className="App">

@@ -17,7 +17,6 @@ class LeafletMap extends Component {
   render() {
 
     let { currentCoords, polygonCoords } = this.props;
-    console.log(polygonCoords)
 
     return (
       <div className="map-container">
@@ -39,7 +38,9 @@ class LeafletMap extends Component {
             position="bottomright"
           />
           <AllMarkers />
-          
+          <Polygon
+            positions={ polygonCoords }
+          />
         </Map>
       </div>
     );
