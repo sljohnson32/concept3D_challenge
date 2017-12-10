@@ -8,7 +8,6 @@ const storeAllLocations = (locations) => {
 };
 
 const storeNewLocation = (location) => {
-  console.log('NEW LOCATION', location)
   return {
     type: 'STORE_NEW_LOCATION',
     location
