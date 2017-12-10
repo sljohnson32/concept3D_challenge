@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, ZoomControl } from 'react-leaflet';
+import { Map, Polygon, TileLayer, ZoomControl } from 'react-leaflet';
 import AllMarkers from '../containers/AllMarkersContainer'
 
 class LeafletMap extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      center: [39.750809, -104.996810]
     };
   }
 
@@ -15,12 +15,16 @@ class LeafletMap extends Component {
   }
 
   render() {
+
+    let { currentCoords, polygonCoords } = this.props;
+    console.log(polygonCoords)
+
     return (
       <div className="map-container">
         <Map
           className="map"
           zoomControl={false}
-          center={[39.750809, -104.996810]}
+          center={ currentCoords ? currentCoords : this.state.center }
           zoom={4}
           maxBounds={[[85, 100], [-85, -280]]}
           onClick={this.handleClick}
@@ -35,6 +39,7 @@ class LeafletMap extends Component {
             position="bottomright"
           />
           <AllMarkers />
+          
         </Map>
       </div>
     );
