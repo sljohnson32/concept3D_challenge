@@ -5,11 +5,12 @@ class Form extends Component {
 
   submitForm(e, data) {
     e.preventDefault();
-    data.lat = data.lat * 1;
-    data.lng = data.lng * 1;
-    if (isCoordinates([data.lng, data.lat], { validate: true })) {
+    let lat = data.lat * 1;
+    let lng = data.lng * 1;
+    if (isCoordinates([lng, lat], { validate: true })) {
+      this.props.storeCurrentCoords({ lat, lng })
       this.props.saveLocation(data);
-    } else alert(`${data.lat} and ${data.lng} are not valid coordinates. Please try again`)
+    } else alert(`${lat} and ${lng} are not valid coordinates. Please try again`)
   }
 
   render() {

@@ -6,7 +6,7 @@ class LeafletMap extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      center: [39.750809, -104.996810]
     };
   }
 
@@ -20,7 +20,7 @@ class LeafletMap extends Component {
         <Map
           className="map"
           zoomControl={false}
-          center={[39.750809, -104.996810]}
+          center={this.state.center}
           zoom={4}
           maxBounds={[[85, 100], [-85, -280]]}
           onClick={this.handleClick}
