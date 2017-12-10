@@ -5,9 +5,9 @@ import { fetchAllLocations } from '../actions/locationActions';
 import App from '../components/App';
 
 const mapStateToProps = (state) => {
-  return { 
+  return {
     locations: state.Locations.data,
-    coords: state.Locations.coords
+    currentCoords: state.Locations.currentCoords
   };
 };
 

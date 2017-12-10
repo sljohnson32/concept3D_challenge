@@ -1,5 +1,5 @@
 const initialState = {
-  data: [],
+  data: []
 };
 
 const Locations = (state = initialState, action) => {
@@ -9,9 +9,9 @@ const Locations = (state = initialState, action) => {
         data: state.data.concat(action.data)
       });
 
-    case 'STORE_COORDS':
+    case 'STORE_CURRENT_COORDS':
       return Object.assign({}, state, {
-        coords: action.coords
+        currentCoords: action.coords
       });
 
     default:

@@ -9,10 +9,17 @@ const storeAllLocations = (locations) => {
 
 const storeCurrentCoords = (coords) => {
   return {
-    type: 'STORE_COORDS',
+    type: 'STORE_CURRENT_COORDS',
     coords
-  }
-}
+  };
+};
+
+const storePolygonCoords = (coords) => {
+  return {
+    type: 'STORE_POLYGON_COORDS',
+    coords
+  };
+};
 
 const fetchAllLocations = () => {
   return (dispatch) => {
@@ -43,4 +50,4 @@ const saveLocation = (location) => {
 };
 
 
-export { fetchAllLocations, saveLocation, storeCurrentCoords }
+export { fetchAllLocations, saveLocation, storeCurrentCoords, storePolygonCoords }

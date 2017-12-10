@@ -13,13 +13,14 @@ class App extends Component {
 
   render() {
 
-    let { coords } = this.props
+    let { currentCoords, polygonCoords } = this.props
 
     return (
       <div className="App">
         <FormContainer />
         <LeafletMap
-          currentCoords={ coords }
+          currentCoords={ currentCoords }
+          polygonCoords={ polygonCoords }
         />
       </div>
     );
