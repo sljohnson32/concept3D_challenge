@@ -13,7 +13,7 @@ class App extends Component {
 
   render() {
 
-    let { currentCoords, polygonCoords } = this.props
+    let { currentCoords, polygonCoords, setLatLng } = this.props;
 
     return (
       <div className="App">
@@ -21,6 +21,7 @@ class App extends Component {
         <LeafletMap
           currentCoords={ currentCoords }
           polygonCoords={ polygonCoords }
+          setLatLng={ setLatLng }
         />
       </div>
     );
