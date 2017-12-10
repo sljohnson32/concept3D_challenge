@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
   return {
     locations: state.Locations.data,
     currentCoords: state.Locations.currentCoords,
-    latLng: state.LatLng
+    latLng: state.LatLng,
+    polygonCoords: state.Polygon
   };
 };
 
