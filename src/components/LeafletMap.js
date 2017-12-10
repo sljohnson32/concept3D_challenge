@@ -9,12 +9,7 @@ class LeafletMap extends Component {
       center: [39.750809, -104.996810]
     };
   }
-
-  // handleClick(e) {
-  //   console.log(e.latlng)
-  //   props.setLatLng(e.latlng)
-  // }
-
+  
   render() {
 
     let { currentCoords, polygonCoords, setLatLng } = this.props;

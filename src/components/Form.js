@@ -3,6 +3,14 @@ const isCoordinates = require('is-coordinates')
 
 class Form extends Component {
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.latLng !== []) {
+      let { lat, lng } = nextProps.latLng;
+      this.lat.value = lat;
+      this.lng.value = lng;
+    }
+  }
+
   submitForm(e, data) {
     e.preventDefault();
     let lat = data.lat * 1;
