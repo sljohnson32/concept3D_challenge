@@ -12,6 +12,7 @@ class AllMarkers extends Component {
           key={i}
           location={[+marker.lat, +marker.lng]}
           name={marker.name}
+          storePolygonCoords={ this.props.storePolygonCoords }
         />
       )
     })

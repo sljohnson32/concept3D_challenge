@@ -3,19 +3,23 @@ import { Marker, Tooltip } from 'react-leaflet';
 import L from 'leaflet'
 import tealdot from '../imgs/tealdot.svg'
 
+let icon = L.icon({
+  iconUrl: tealdot,
+  iconSize: [15, 15]
+});
+
 class MapMarker extends Component {
 
   render() {
-    let icon = L.icon({
-      iconUrl: tealdot,
-      iconSize: [15, 15]
-    });
+
+    let { location, storePolygonCoords } = this.props
 
     return (
       <div className="marker-container">
           <Marker
-            position={this.props.location}
             icon={icon}
+            position={location}
+            onClick={() => storePolygonCoords(location)}
           >
             <Tooltip
               sticky
