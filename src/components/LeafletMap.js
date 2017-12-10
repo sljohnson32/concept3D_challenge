@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, ZoomControl } from 'react-leaflet';
-import AllMarkers from '../containers/AllMarkers'
+import AllMarkers from '../containers/AllMarkersContainer'
 
 class LeafletMap extends Component {
   constructor(props) {
@@ -12,7 +12,6 @@ class LeafletMap extends Component {
 
   handleClick(e) {
     console.log(e.latlng)
-    
   }
 
   render() {

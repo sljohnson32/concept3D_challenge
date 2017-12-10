@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 import MapMarker from './Marker'
 
 class AllMarkers extends Component {
+
+  componentWillReceiveProps(nextProps) {
+    console.log('ALL MARKERS', nextProps)
+  }
+
   render() {
     const markerArray = this.props.locations.map((marker, i) => {
       return (
