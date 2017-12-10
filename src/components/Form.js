@@ -8,9 +8,16 @@ class Form extends Component {
     let lat = data.lat * 1;
     let lng = data.lng * 1;
     if (isCoordinates([lng, lat], { validate: true })) {
-      this.props.storeCurrentCoords({ lat, lng })
+      this.props.storeCurrentCoords({ lat, lng });
       this.props.saveLocation(data);
+      this.resetForm();
     } else alert(`${lat} and ${lng} are not valid coordinates. Please try again`)
+  }
+
+  resetForm() {
+    this.name.value = '';
+    this.lat.value = '';
+    this.lng.value = '';
   }
 
   render() {
