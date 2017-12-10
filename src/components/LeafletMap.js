@@ -17,7 +17,6 @@ class LeafletMap extends Component {
   render() {
 
     let { currentCoords, polygonCoords } = this.props;
-    console.log(polygonCoords)
 
     return (
       <div className="map-container">
