@@ -10,13 +10,14 @@ class LeafletMap extends Component {
     };
   }
 
-  handleClick(e) {
-    console.log(e.latlng)
-  }
+  // handleClick(e) {
+  //   console.log(e.latlng)
+  //   props.setLatLng(e.latlng)
+  // }
 
   render() {
 
-    let { currentCoords, polygonCoords } = this.props;
+    let { currentCoords, polygonCoords, setLatLng } = this.props;
 
     return (
       <div className="map-container">
@@ -26,7 +27,7 @@ class LeafletMap extends Component {
           center={ currentCoords ? currentCoords : this.state.center }
           zoom={4}
           maxBounds={[[85, 100], [-85, -280]]}
-          onClick={this.handleClick}
+          onClick={ (e) => setLatLng(e.latlng) }
         >
           <TileLayer
             url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
