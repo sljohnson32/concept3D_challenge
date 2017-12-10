@@ -1,21 +1,13 @@
-const initialState = {
-  coords: []
-};
-
-const Polygon = (state = initialState, action) => {
+const Polygon = (state = [], action) => {
 
   switch (action.type) {
     case 'STORE_POLYGON_COORDS':
-      let newState = state.coords;
+      let newState = state;
       const index = newState.indexOf(action.coords);
 
       if (index !== -1) {
-        newState = newState.filter((arr, i) => i !== index);
-      } else newState = newState.concat([action.coords]);
-
-      return Object.assign({}, state, {
-        coords: newState
-      });
+        return newState.filter((arr, i) => i !== index);
+      } else return newState.concat([action.coords]);
 
     default:
       return state;

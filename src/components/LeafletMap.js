@@ -39,7 +39,9 @@ class LeafletMap extends Component {
             position="bottomright"
           />
           <AllMarkers />
-          
+          <Polygon
+            positions={ polygonCoords }
+          />
         </Map>
       </div>
     );

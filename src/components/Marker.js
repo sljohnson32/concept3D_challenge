@@ -13,6 +13,7 @@ class MapMarker extends Component {
   render() {
 
     let { location, storePolygonCoords } = this.props
+    console.log(location)
 
     return (
       <div className="marker-container">
