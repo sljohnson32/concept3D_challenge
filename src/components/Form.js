@@ -4,7 +4,7 @@ const isCoordinates = require('is-coordinates')
 class Form extends Component {
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.latLng !== []) {
+    if (nextProps.latLng !== this.props.latLng && nextProps.latLng.lat) {
       let { lat, lng } = nextProps.latLng;
       this.lat.value = lat;
       this.lng.value = lng;
