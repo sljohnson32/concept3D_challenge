@@ -46,6 +46,6 @@ export default class LeafletMap extends Component {
 
 LeafletMap.propTypes = {
   currentCoords: PropTypes.arrayOf(PropTypes.array),
-  polygonCoords: PropTypes.arrayOf(PropTypes.array).isRequired,
-  setLatLng: PropTypes.func.isRequired
+  polygonCoords: PropTypes.arrayOf(PropTypes.array),
+  setLatLng: PropTypes.func
 };

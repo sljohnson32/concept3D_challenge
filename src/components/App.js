@@ -34,7 +34,7 @@ export default class App extends Component {
 
 App.propTypes = {
   currentCoords: PropTypes.arrayOf(PropTypes.array),
-  latLng: PropTypes.arrayOf(PropTypes.number).isRequired,
-  polygonCoords: PropTypes.arrayOf(PropTypes.array).isRequired,
-  setLatLng: PropTypes.func.isRequired
+  latLng: PropTypes.arrayOf(PropTypes.number),
+  polygonCoords: PropTypes.arrayOf(PropTypes.array),
+  setLatLng: PropTypes.func
 };
