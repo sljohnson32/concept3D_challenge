@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Marker, Tooltip } from 'react-leaflet';
-import L from 'leaflet'
-import tealdot from '../imgs/tealdot.svg'
+import L from 'leaflet';
+import tealdot from '../imgs/tealdot.svg';
 
 let icon = L.icon({
   iconUrl: tealdot,
   iconSize: [15, 15]
 });
 
-class MapMarker extends Component {
+export default class MapMarker extends Component {
 
   render() {
 
@@ -35,4 +36,7 @@ class MapMarker extends Component {
   }
 }
 
-export default MapMarker;
+MapMarker.propTypes = {
+  location: PropTypes.arrayOf(PropTypes.number).isRequired,
+  storePolygonCoords: PropTypes.func.isRequired
+};
