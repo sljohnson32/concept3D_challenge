@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Map, Polygon, TileLayer, ZoomControl } from 'react-leaflet';
-import AllMarkers from '../containers/AllMarkersContainer'
+import AllMarkers from '../containers/AllMarkersContainer';
 
-class LeafletMap extends Component {
+export default class LeafletMap extends Component {
   constructor(props) {
     super(props)
     this.state = {
       center: [39.750809, -104.996810]
     };
   }
-  
+
   render() {
 
     let { currentCoords, polygonCoords, setLatLng } = this.props;
@@ -43,4 +44,8 @@ class LeafletMap extends Component {
   }
 }
 
-export default LeafletMap;
+LeafletMap.propTypes = {
+  currentCoords: PropTypes.arrayOf(PropTypes.array),
+  polygonCoords: PropTypes.arrayOf(PropTypes.array).isRequired,
+  setLatLng: PropTypes.func.isRequired
+};

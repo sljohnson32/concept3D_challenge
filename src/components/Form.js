@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-const isCoordinates = require('is-coordinates')
+import PropTypes from 'prop-types';
+const isCoordinates = require('is-coordinates');
 
-class Form extends Component {
+export default class Form extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.latLng !== this.props.latLng && nextProps.latLng.lat) {
@@ -66,5 +67,6 @@ class Form extends Component {
   }
 }
 
-
-export default Form;
+Form.propTypes = {
+  latLng: PropTypes.arrayOf(PropTypes.number).isRequired
+};

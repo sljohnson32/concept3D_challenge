@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import LeafletMap from './LeafletMap';
 import FormContainer from '../containers/FormContainer';
 
-class App extends Component {
+export default class App extends Component {
 
   componentDidMount() {
     this.getLocations();
@@ -31,4 +32,9 @@ class App extends Component {
   }
 }
 
-export default App;
+App.propTypes = {
+  currentCoords: PropTypes.arrayOf(PropTypes.array),
+  latLng: PropTypes.arrayOf(PropTypes.number).isRequired,
+  polygonCoords: PropTypes.arrayOf(PropTypes.array).isRequired,
+  setLatLng: PropTypes.func.isRequired
+};

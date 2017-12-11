@@ -1,9 +1,10 @@
 /*eslint-disable no-unused-vars*/
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MapMarker from './Marker'
 
-class AllMarkers extends Component {
+export default class AllMarkers extends Component {
 
   render() {
     const markerArray = this.props.locations.map((marker, i) => {
@@ -25,4 +26,6 @@ class AllMarkers extends Component {
   }
 }
 
-export default AllMarkers;
+AllMarkers.propTypes = {
+  locations: PropTypes.arrayOf(PropTypes.object).isRequired
+};
