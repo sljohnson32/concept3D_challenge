@@ -1,4 +1,4 @@
-const LatLng = (state = [], action) => {
+const LatLng = (state = {}, action) => {
 
   switch (action.type) {
     case 'SET_LATLNG':

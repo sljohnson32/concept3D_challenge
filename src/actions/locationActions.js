@@ -43,7 +43,7 @@ const fetchAllLocations = () => {
 
 const saveLocation = (location) => {
   return (dispatch) => {
-    dispatch(setLatLng([]))
+    dispatch(setLatLng({}))
     return fetch('/locations', {
       method: 'POST',
       body: JSON.stringify(location),

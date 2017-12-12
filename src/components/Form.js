@@ -6,6 +6,8 @@ export default class Form extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.latLng !== this.props.latLng && nextProps.latLng.lat) {
+      console.log('CURRENT', this.props.latLng)
+      console.log('NEXT', nextProps.latLng)
       let { lat, lng } = nextProps.latLng;
       this.lat.value = lat;
       this.lng.value = lng;
@@ -68,5 +70,5 @@ export default class Form extends Component {
 }
 
 Form.propTypes = {
-  latLng: PropTypes.arrayOf(PropTypes.number).isRequired
+  latLng: PropTypes.objectOf(PropTypes.number).isRequired
 };
