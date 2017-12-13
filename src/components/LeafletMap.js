@@ -1,3 +1,4 @@
+/*eslint-disable react/jsx-filename-extension, no-unneeded-ternary, react/require-default-props*/
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Map, Polygon, TileLayer, ZoomControl } from 'react-leaflet';
@@ -5,25 +6,24 @@ import AllMarkers from '../containers/AllMarkersContainer';
 
 export default class LeafletMap extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      center: [39.750809, -104.996810]
+      center: [39.750809, -104.996810],
     };
   }
 
   render() {
-
-    let { currentCoords, polygonCoords, setLatLng } = this.props;
+    const { currentCoords, polygonCoords, setLatLng } = this.props;
 
     return (
       <div className="map-container">
         <Map
           className="map"
           zoomControl={false}
-          center={ currentCoords ? currentCoords : this.state.center }
+          center={currentCoords ? currentCoords : this.state.center}
           zoom={4}
           maxBounds={[[85, 100], [-85, -280]]}
-          onClick={ (e) => setLatLng(e.latlng) }
+          onClick={e => setLatLng(e.latlng)}
         >
           <TileLayer
             url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
@@ -36,7 +36,7 @@ export default class LeafletMap extends Component {
           />
           <AllMarkers />
           <Polygon
-            positions={ polygonCoords }
+            positions={polygonCoords}
           />
         </Map>
       </div>
@@ -46,6 +46,6 @@ export default class LeafletMap extends Component {
 
 LeafletMap.propTypes = {
   currentCoords: PropTypes.objectOf(PropTypes.number),
-  polygonCoords: PropTypes.arrayOf(PropTypes.array),
-  setLatLng: PropTypes.func
+  polygonCoords: PropTypes.arrayOf(PropTypes.array).isRequired,
+  setLatLng: PropTypes.func.isRequired,
 };
