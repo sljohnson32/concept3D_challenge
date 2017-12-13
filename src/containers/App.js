@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
     locations: state.Locations.data,
     currentCoords: state.Locations.currentCoords,
     latLng: state.LatLng,
-    polygonCoords: state.Polygon
+    polygonCoords: state.Polygon,
   };
 };
 
