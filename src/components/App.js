@@ -1,10 +1,10 @@
+/*eslint-disable react/jsx-filename-extension, react/require-default-props, object-curly-newline*/
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import LeafletMap from './LeafletMap';
 import FormContainer from '../containers/FormContainer';
 
 export default class App extends Component {
-
   componentDidMount() {
     this.getLocations();
   }
@@ -14,18 +14,17 @@ export default class App extends Component {
   }
 
   render() {
-
-    let { currentCoords, latLng, polygonCoords, setLatLng } = this.props;
+    const { currentCoords, latLng, polygonCoords, setLatLng } = this.props;
 
     return (
       <div className="App">
         <FormContainer
-          latLng={ latLng }
+          latLng={latLng}
         />
         <LeafletMap
-          currentCoords={ currentCoords }
-          polygonCoords={ polygonCoords }
-          setLatLng={ setLatLng }
+          currentCoords={currentCoords}
+          polygonCoords={polygonCoords}
+          setLatLng={setLatLng}
         />
       </div>
     );
@@ -34,7 +33,7 @@ export default class App extends Component {
 
 App.propTypes = {
   currentCoords: PropTypes.objectOf(PropTypes.number),
-  latLng: PropTypes.objectOf(PropTypes.number),
-  polygonCoords: PropTypes.arrayOf(PropTypes.array),
-  setLatLng: PropTypes.func
+  latLng: PropTypes.objectOf(PropTypes.number).isRequired,
+  polygonCoords: PropTypes.arrayOf(PropTypes.array).isRequired,
+  setLatLng: PropTypes.func.isRequired,
 };

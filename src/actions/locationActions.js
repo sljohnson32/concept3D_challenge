@@ -10,28 +10,28 @@ const storeAllLocations = (locations) => {
 const storeCurrentCoords = (coords) => {
   return {
     type: 'STORE_CURRENT_COORDS',
-    coords
+    coords,
   };
 };
 
 const storePolygonCoords = (coords) => {
   return {
     type: 'STORE_POLYGON_COORDS',
-    coords
+    coords,
   };
 };
 
 const removePolygonCoords = (coords) => {
   return {
     type: 'REMOVE_POLYGON_COORDS',
-    coords
+    coords,
   };
 };
 
 const setLatLng = (coords) => {
   return {
     type: 'SET_LATLNG',
-    coords
+    coords,
   };
 };
 
@@ -50,19 +50,20 @@ const fetchAllLocations = () => {
 
 const saveLocation = (location) => {
   return (dispatch) => {
-    dispatch(setLatLng({}))
+    dispatch(setLatLng({}));
     return fetch('/locations', {
       method: 'POST',
       body: JSON.stringify(location),
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
-      }
+      },
     })
       .then(data => data.json())
-      .then(json => dispatch(storeAllLocations(json)))
+      .then(json => dispatch(storeAllLocations(json)));
   };
 };
 
 
-export { fetchAllLocations, saveLocation, setLatLng, storeCurrentCoords, storePolygonCoords, removePolygonCoords }
+export { fetchAllLocations, saveLocation, setLatLng, storeCurrentCoords,
+  storePolygonCoords, removePolygonCoords };
