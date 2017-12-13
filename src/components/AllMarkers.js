@@ -14,6 +14,7 @@ export default class AllMarkers extends Component {
           location={[+marker.lat, +marker.lng]}
           name={marker.name}
           storePolygonCoords={ this.props.storePolygonCoords }
+          removePolygonCoords={ this.props.removePolygonCoords }
         />
       )
     })
@@ -27,5 +28,7 @@ export default class AllMarkers extends Component {
 }
 
 AllMarkers.propTypes = {
-  locations: PropTypes.arrayOf(PropTypes.object).isRequired
+  locations: PropTypes.arrayOf(PropTypes.object).isRequired,
+  storePolygonCoords: PropTypes.func.isRequired,
+  removePolygonCoords: PropTypes.func.isRequired
 };

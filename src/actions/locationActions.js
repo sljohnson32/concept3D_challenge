@@ -21,6 +21,13 @@ const storePolygonCoords = (coords) => {
   };
 };
 
+const removePolygonCoords = (coords) => {
+  return {
+    type: 'REMOVE_POLYGON_COORDS',
+    coords
+  };
+};
+
 const setLatLng = (coords) => {
   return {
     type: 'SET_LATLNG',
@@ -58,4 +65,4 @@ const saveLocation = (location) => {
 };
 
 
-export { fetchAllLocations, saveLocation, setLatLng, storeCurrentCoords, storePolygonCoords }
+export { fetchAllLocations, saveLocation, setLatLng, storeCurrentCoords, storePolygonCoords, removePolygonCoords }

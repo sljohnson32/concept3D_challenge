@@ -11,16 +11,33 @@ let icon = L.icon({
 
 export default class MapMarker extends Component {
 
+  constructor() {
+    super()
+    this.state = {
+      selectedState: false
+    }
+  }
+
+  handlePolygonCoords(location) {
+    if (this.state.selectedState) {
+      this.props.removePolygonCoords(location);
+      // this.setState({ selectedState: false })
+    } else {
+      this.props.storePolygonCoords(location);
+    }
+    this.setState({ selectedState: !this.state.selectedState })
+  }
+
   render() {
 
-    let { location, storePolygonCoords } = this.props
+    let { location } = this.props
 
     return (
       <div className="marker-container">
           <Marker
             icon={icon}
             position={location}
-            onClick={() => storePolygonCoords(location)}
+            onClick={() => this.handlePolygonCoords(location)}
           >
             <Tooltip
               sticky
@@ -38,5 +55,6 @@ export default class MapMarker extends Component {
 
 MapMarker.propTypes = {
   location: PropTypes.arrayOf(PropTypes.number).isRequired,
-  storePolygonCoords: PropTypes.func.isRequired
+  storePolygonCoords: PropTypes.func.isRequired,
+  removePolygonCoords: PropTypes.func.isRequired
 };
