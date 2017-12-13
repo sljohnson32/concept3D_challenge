@@ -1,34 +1,32 @@
-/*eslint-disable no-unused-vars*/
-import React, { Component } from 'react';
+/*eslint-disable no-unused-vars, react/jsx-filename-extension, react/no-array-index-key*/
+import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import MapMarker from './Marker'
+import MapMarker from './Marker';
 
-export default class AllMarkers extends Component {
-
-  render() {
-    const markerArray = this.props.locations.map((marker, i) => {
-      return (
-        <MapMarker
-          key={i}
-          location={[+marker.lat, +marker.lng]}
-          name={marker.name}
-          storePolygonCoords={ this.props.storePolygonCoords }
-          removePolygonCoords={ this.props.removePolygonCoords }
-        />
-      )
-    })
-
+const AllMarkers = ({ locations, storePolygonCoords, removePolygonCoords }) => {
+  const markerArray = locations.map((marker, i) => {
     return (
-      <div className="paths-container">
-        {markerArray}
-      </div>
+      <MapMarker
+        key={i}
+        location={[+marker.lat, +marker.lng]}
+        name={marker.name}
+        storePolygonCoords={storePolygonCoords}
+        removePolygonCoords={removePolygonCoords}
+      />
     );
-  }
-}
+  });
+
+  return (
+    <div className="paths-container">
+      {markerArray}
+    </div>
+  );
+};
 
 AllMarkers.propTypes = {
   locations: PropTypes.arrayOf(PropTypes.object).isRequired,
   storePolygonCoords: PropTypes.func.isRequired,
-  removePolygonCoords: PropTypes.func.isRequired
+  removePolygonCoords: PropTypes.func.isRequired,
 };
+
+export default AllMarkers;
