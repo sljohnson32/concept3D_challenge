@@ -1,3 +1,4 @@
+/*eslint-disable no-console*/
 const express = require('express');
 
 const app = express();
@@ -44,10 +45,10 @@ app.get('/', (req, res) => {
 app.post('/locations', (request, response) => {
   app.locals.idIndex += 1;
 
-  const data = request.body
-  const newLocation = Object.assign({}, {id: `id${app.locals.idIndex}`}, data)
+  const data = request.body;
+  const newLocation = Object.assign({}, { id: `id${app.locals.idIndex}` }, data);
 
-  initialLocations.push(newLocation)
+  initialLocations.push(newLocation);
 
   return response.status(201).json(newLocation);
 });
