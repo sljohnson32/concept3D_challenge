@@ -1,4 +1,4 @@
-/*eslint-disable no-unused-vars, react/jsx-filename-extension, react/no-array-index-key*/
+/*eslint-disable react/jsx-filename-extension, react/no-array-index-key*/
 import React from 'react';
 import PropTypes from 'prop-types';
 import MapMarker from './Marker';
