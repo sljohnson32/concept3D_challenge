@@ -1,5 +1,4 @@
 const LatLng = (state = {}, action) => {
-
   switch (action.type) {
     case 'SET_LATLNG':
       return action.coords;

@@ -1,17 +1,17 @@
 const initialState = {
-  data: []
+  data: [],
 };
 
 const Locations = (state = initialState, action) => {
   switch (action.type) {
     case 'STORE_LOCATIONS':
       return Object.assign({}, state, {
-        data: state.data.concat(action.data)
+        data: state.data.concat(action.data),
       });
 
     case 'STORE_CURRENT_COORDS':
       return Object.assign({}, state, {
-        currentCoords: action.coords
+        currentCoords: action.coords,
       });
 
     default:

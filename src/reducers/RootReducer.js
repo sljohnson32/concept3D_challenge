@@ -7,7 +7,7 @@ import Polygon from './PolygonReducer';
 const RootReducer = combineReducers({
   LatLng,
   Locations,
-  Polygon
+  Polygon,
 });
 
 export default RootReducer;
