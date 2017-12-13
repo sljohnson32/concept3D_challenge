@@ -17,6 +17,9 @@ export default class Form extends Component {
       const { lat, lng } = nextProps.latLng;
       this.lat.value = lat;
       this.lng.value = lng;
+      if (this.name.value !== '') {
+        this.setState({ disable: false });
+      }
     }
   }
 
