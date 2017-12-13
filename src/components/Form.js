@@ -34,6 +34,7 @@ export default class Form extends Component {
     this.name.value = '';
     this.lat.value = '';
     this.lng.value = '';
+    this.setState({ disable: true })
   }
 
   checkInputs(e, data) {
